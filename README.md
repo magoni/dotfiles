@@ -1,0 +1,2 @@
+# magoni
+My dotfiles.
