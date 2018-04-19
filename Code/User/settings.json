@@ -1,0 +1,26 @@
+{
+    "editor.fontSize": 15,
+    "editor.lineHeight": 21,
+    "editor.fontFamily": "Fira Code",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "relative",
+    "workbench.colorTheme": "Oceanic Next (dimmed bg)",
+    "editor.smoothScrolling": true,
+    "editor.fontLigatures": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#333333",
+        "statusBar.foreground": "#dddddd"
+    },
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "diffEditor.renderSideBySide": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "~/Library": true
+    },
+}

@@ -1,0 +1,7 @@
+Babel JavaScript
+Beautify
+Debugger for Chrome
+Document This
+ESLint
+Theme - Oceanic Next
+Vim
