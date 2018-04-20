@@ -78,3 +78,4 @@ set equalalways
 
 " File search
 set path+=**
+set wildignore+=**/node_modules/**
