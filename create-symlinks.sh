@@ -1,8 +1,25 @@
-#!/bin/sh
-ln -s $CWD/.vimrc ~/.vimrc
-ln -s $CWD/.vim ~/.vim
-mkdir -p ~/.config
-ln -s $CWD/.config/fish ~/.config/fish
-ln -s $CWD/.config/base16-shell/ ~/.config/base16-shell
-ln -s $CWD/.tmux.conf ~/.tmux.conf
-ln -s $CWD/Code/User ~/Library/Application\ Support/Code/User
+#!/bin/bash
+set -e
+files=(".vimrc" ".vim" ".tmux.conf" ".config/fish" ".config/base16-shell")
+
+repo=`pwd`
+dest="$HOME"
+
+mkdir -p "$dest"/.config
+mkdir -p "$dest"/dotfiles-old
+
+for file in "${files[@]}"
+do
+    echo "$dest/$file -> $repo/$file"
+
+    if [ -f "$dest/$file" ] || [ -d "$dest/$file" ]
+    then
+        mv "$dest/$file" "$dest/dotfiles-old/"
+    fi
+
+    ln -s "$repo/$file" "$dest/$file"
+done
+
+echo "done"
+
+# ln -s $repo/Code/User ~/Library/Application\ Support/Code/User
