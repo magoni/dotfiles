@@ -44,7 +44,7 @@ set updatetime=100
 " Status line
 set noshowmode
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
+      \ 'colorscheme': 'powerline',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename' ] ]
@@ -76,5 +76,5 @@ set splitbelow
 set splitright
 set equalalways
 
- " File search
- set path+=**
+" File search
+set path+=**
