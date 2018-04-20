@@ -1,13 +1,33 @@
 execute pathogen#infect()
 
+set showmatch
+
+" Shortcuts
+let mapleader = ","
+nmap <leader>w :w!<cr>
+command W w !sudo tee % > /dev/null
+map <leader>pp :setlocal paste!<cr>
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Shortcuts - buffers
+map <leader>bd :Bclose<cr>:tabclose<cr>gT
+" close all buffers
+map <leader>ba :bufdo bd<cr>
+map <leader>l :bnext<cr>
+map <leader>h :bprevious<cr>
+
 " Colors
 syntax on
 let base16colorspace=256
 colorscheme base16-eighties
 set cursorline
 
+" Search
+set ignorecase
+set smartcase
+
 " Indentation
-filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
