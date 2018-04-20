@@ -13,15 +13,21 @@ normal mode - on file name `gf` to edit file
 `:find file.js` - " but in new tab
 `:find *le.js` - fuzzy search
 
+## Git
+`]c`, `[c` - go to previous/next change
+
 ## Buffers
 `:ls`
 `:hide edit otherfile`
 `:b file` - jumps to open file.js
+`:b <Tab>` - nice lil buffer list
 
 ## Splits
 https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
 
+## Misc
+`C-p` - simple autocomplete
+
 ## TODO
 - [ ] change swap file directory
-- [ ] vimrc - `set path+=**` - find in all dirs
 

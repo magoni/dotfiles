@@ -10,6 +10,7 @@ command W w !sudo tee % > /dev/null
 map <leader>pp :setlocal paste!<cr>
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
+map <leader>hl :set hls!
 
 " Shortcuts - buffers
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -23,6 +24,7 @@ syntax on
 let base16colorspace=256
 colorscheme base16-eighties
 set cursorline
+let g:javascript_plugin_jsdoc = 1
 
 " Search
 set ignorecase
@@ -94,3 +96,8 @@ set equalalways
 " File search
 set path+=**
 set wildignore+=**/node_modules/**
+set wildignore+=**/.git/**
+
+" Centralize swap files so they don't litter (caveat: other vims won't know a
+" file is being edited)
+set directory^=$HOME/.vim/tmp//
