@@ -15,7 +15,8 @@ sudo ln -s /usr/local/bin/vim /usr/local/bin/vi
 ```
 
 ## TODO
-* https://vimawesome.com/plugin/vim-liteline
 * https://vimawesome.com/plugin/ale
+* https://vimawesome.com/plugin/fzf
+* completion?
 * https://vimawesome.com/plugin/closetag-vim
 ```

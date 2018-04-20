@@ -1,7 +1,5 @@
 execute pathogen#infect()
 
-set number relativenumber
-
 " Colors
 syntax on
 let base16colorspace=256
@@ -17,5 +15,37 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-" Quicker update time for vim-gitgutter
+" Gutter
+set number relativenumber
+" for vim-gitgutter
 set updatetime=100
+
+" Status line
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'seoul256',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'filename': 'LightlineFilename'
+      \ },
+      \ }
+
+function! LightlineFilename()
+  let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+  let modified = &modified ? ' +' : ''
+  return filename . modified
+endfunction
+
+" Trim trailing whitespace on save
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
