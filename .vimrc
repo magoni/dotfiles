@@ -1,6 +1,7 @@
 execute pathogen#infect()
 
 set showmatch
+let g:gitgutter_terminal_reports_focus=0
 
 " Shortcuts
 let mapleader = ","
