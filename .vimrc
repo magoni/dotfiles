@@ -17,10 +17,5 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-" Powerline
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-
 " Quicker update time for vim-gitgutter
 set updatetime=100
