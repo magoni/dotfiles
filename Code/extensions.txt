@@ -3,5 +3,6 @@ Beautify
 Debugger for Chrome
 Document This
 ESLint
+GitLens
 Theme - Oceanic Next
 Vim
