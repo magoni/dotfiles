@@ -70,3 +70,11 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+" Windows
+set splitbelow
+set splitright
+set equalalways
+
+ " File search
+ set path+=**
