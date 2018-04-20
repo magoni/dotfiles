@@ -16,10 +16,8 @@ sudo ln -s /usr/local/bin/vim /usr/local/bin/vi
 
 ## TODO
 * https://vimawesome.com/plugin/closetag-vim
-* https://github.com/pangloss/vim-javascript or https://github.com/jelera/vim-javascript-syntax.git
 
 ### Maybe
-* https://vimawesome.com/plugin/ale
 * https://github.com/mileszs/ack.vim
 * https://github.com/ggreer/the_silver_searcher
 ```
