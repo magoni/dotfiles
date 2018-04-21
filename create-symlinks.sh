@@ -20,6 +20,7 @@ do
     ln -s "$repo/$file" "$dest/$file"
 done
 
+mkdir -p "$dest"/.vim/tmp
+# ln -s $repo/Code/User ~/Library/Application\ Support/Code/User
 echo "done"
 
-# ln -s $repo/Code/User ~/Library/Application\ Support/Code/User
