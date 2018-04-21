@@ -20,4 +20,3 @@ sudo ln -s /usr/local/bin/vim /usr/local/bin/vi
 ### Maybe
 * https://github.com/mileszs/ack.vim
 * https://github.com/ggreer/the_silver_searcher
-```
