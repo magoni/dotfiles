@@ -1,4 +1,4 @@
 .DS_Store
 fishd.*
 .netrwhist
-.vim/swap/*
+.vim/tmp/*
