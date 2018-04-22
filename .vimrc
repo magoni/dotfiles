@@ -3,14 +3,21 @@ execute pathogen#infect()
 set showmatch
 let g:gitgutter_terminal_reports_focus=0
 
+autocmd! bufwritepost .vimrc source %
+
 " Shortcuts
 let mapleader = ","
+set wildcharm=<C-z>
 nmap <leader>w :w!<cr>
-command W w !sudo tee % > /dev/null
+" command W w !sudo tee % > /dev/null " breaking autosourcing of vimrc somehow
+nnoremap <leader>b :buffer <C-z><S-Tab>
+nnoremap <leader>f :find<SPACE>
+nnoremap ,s :mksession! ~/.vim/session<CR>
+map <leader>hl :set hls!<cr>
+nnoremap \ :Ack<SPACE>
 map <leader>pp :setlocal paste!<cr>
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
-map <leader>hl :set hls!
 
 " Shortcuts - buffers
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -89,14 +96,25 @@ endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Windows
-set splitbelow
 set splitright
-set equalalways
+set splitbelow
 
 " File search
 set path+=**
 set wildignore+=**/node_modules/**
 set wildignore+=**/.git/**
+
+" File browsing with netrw
+let g:netrw_liststyle = 3 " tree view
+let g:netrw_altv=1 " open splits to the right
+
+" Session saving
+set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize,localoptions
+
+" Project search
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " Centralize swap files so they don't litter (caveat: other vims won't know a
 " file is being edited)

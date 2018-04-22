@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/vim-vinegar"]
 	path = .vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+[submodule ".vim/bundle/ack.vim"]
+	path = .vim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
