@@ -2,3 +2,4 @@
 fishd.*
 .netrwhist
 .vim/tmp/*
+.vim/session
