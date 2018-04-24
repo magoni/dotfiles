@@ -1,16 +1,21 @@
 execute pathogen#infect()
 
+set hidden
 set showmatch
 let g:gitgutter_terminal_reports_focus=0
 
 autocmd! bufwritepost .vimrc source %
+
+" Auto close netrw when hidden
+autocmd FileType netrw setl bufhidden=wipe
 
 " Shortcuts
 let mapleader = ","
 set wildcharm=<C-z>
 nmap <leader>w :w!<cr>
 " command W w !sudo tee % > /dev/null " breaking autosourcing of vimrc somehow
-nnoremap <leader>b :buffer <C-z><S-Tab>
+nnoremap <leader>B :buffer <C-z><S-Tab>
+nnoremap <leader>b :b<SPACE>
 nnoremap <leader>f :find<SPACE>
 nnoremap ,s :mksession! ~/.vim/session<CR>
 map <leader>hl :set hls!<cr>
@@ -25,6 +30,19 @@ map <leader>bd :Bclose<cr>:tabclose<cr>gT
 map <leader>ba :bufdo bd<cr>
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+augroup vimrcEx
+  autocmd!
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it for commit messages, when the position is invalid, or when
+  " inside an event handler (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+augroup END
 
 " Colors
 syntax on
@@ -32,6 +50,8 @@ let base16colorspace=256
 colorscheme base16-eighties
 set cursorline
 let g:javascript_plugin_jsdoc = 1
+let g:jsx_ext_required = 0
+autocmd! BufEnter *.hbs setf html
 
 " Search
 set ignorecase
