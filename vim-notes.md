@@ -24,3 +24,21 @@ https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
 
 ## Editing
 `C-p` - simple autocomplete
+
+`:-16,-14co.` - line -16,-14 copy to here
+
+## general
+use numbers to repeat more
+`command [number] motion`
+
+`C-g` - get file path
+`?` - search backwards
+`N` - previous match
+`C-o C-i` - In and Out (jumplist)
+`%` - matching paren
+`:%s/old/new/gc` - `c` prompts before each replacement
+`:#,#s/old/new/g` - between # and #
+`![command]` - execute command
+`:r[!] [FILENAME|COMMAND]` - insert file or command output
+
+`"np` - put from `n` register
