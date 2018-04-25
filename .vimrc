@@ -2,6 +2,7 @@ execute pathogen#infect()
 
 set hidden
 set showmatch
+set title
 let g:gitgutter_terminal_reports_focus=0
 
 autocmd! bufwritepost .vimrc source %
@@ -17,7 +18,7 @@ nmap <leader>w :w!<cr>
 nnoremap <leader>B :buffer <C-z><S-Tab>
 nnoremap <leader>b :b<SPACE>
 nnoremap <leader>f :find<SPACE>
-nnoremap ,s :mksession! ~/.vim/session<CR>
+nnoremap <leader>s :mksession! ~/.vim/session<CR>
 map <leader>hl :set hls!<cr>
 nnoremap \ :Ack<SPACE>
 map <leader>pp :setlocal paste!<cr>
@@ -33,6 +34,12 @@ map <leader>h :bprevious<cr>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
+" Disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 augroup vimrcEx
   autocmd!
   " When editing a file, always jump to the last known cursor position.
@@ -45,13 +52,13 @@ augroup vimrcEx
 augroup END
 
 " Colors
-syntax on
 let base16colorspace=256
 colorscheme base16-eighties
 set cursorline
 let g:javascript_plugin_jsdoc = 1
 let g:jsx_ext_required = 0
-autocmd! BufEnter *.hbs setf html
+" autocmd! BufEnter *.hbs setf html
+autocmd! BufEnter *.hbs setf mustache
 
 " Search
 set ignorecase
@@ -121,9 +128,7 @@ set splitbelow
 
 " File search
 set path+=**
-set wildignore+=**/node_modules/**
-set wildignore+=**/.git/**
-
+set wildignore+=**/node_modules/**,**/.git/**,**/_deploy/**
 " File browsing with netrw
 let g:netrw_liststyle = 3 " tree view
 let g:netrw_altv=1 " open splits to the right
@@ -136,6 +141,6 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-" Centralize swap files so they don't litter (caveat: other vims won't know a
-" file is being edited)
+" Centralize swap files
 set directory^=$HOME/.vim/tmp//
+set nobackup
