@@ -23,4 +23,11 @@ https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
 `C-w o` - close every window but the current
 
 ## Editing
-`C-p` - simple autocomplete
+`C-p, C-n` - simple autocomplete
+`;` - repeat last search (e.g. with `t` or `f`)
+
+`s//c` - confirm each replacement
+
+## Text objects
+`i[w|t|"|p]` - inner word, tag, ", paragraph
+`as` - a sentence
