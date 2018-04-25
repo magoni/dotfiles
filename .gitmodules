@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/ReplaceWithRegister"]
 	path = .vim/bundle/ReplaceWithRegister
 	url = https://github.com/vim-scripts/ReplaceWithRegister
+[submodule ".vim/bundle/vim-jsdoc"]
+	path = .vim/bundle/vim-jsdoc
+	url = https://github.com/heavenshell/vim-jsdoc
