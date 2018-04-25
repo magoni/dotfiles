@@ -24,14 +24,18 @@ https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
 
 ## Editing
 `C-p, C-n` - simple autocomplete
-`;` - repeat last search (e.g. with `t` or `f`)
+`;` - repeat last search (e.g. with `t` or `f`), `,` reverse
 `s//c` - confirm each replacement
+`C-a, C-x` - add/subtract, jump to digit
 
 ## Text objects
 `i[w|t|"|p]` - inner word, tag, ", paragraph
 `as` - a sentence
 `C-p` - simple autocomplete
 `:-16,-14co.` - line -16,-14 copy to here
+
+## Macros
+`qx{changes}q`, `@x` - record, repeat macro to register x
 
 ## general
 use numbers to repeat more
