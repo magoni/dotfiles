@@ -21,6 +21,8 @@ normal mode - on file name `gf` to edit file
 ## Splits
 https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
 `C-w o` - close every window but the current
+`C-w r, R` - rotate splits
+`C-w HJKL` - move split to direction
 
 ## Editing
 `C-p, C-n` - simple autocomplete
