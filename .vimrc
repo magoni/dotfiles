@@ -5,6 +5,8 @@ set showmatch
 set title
 let g:gitgutter_terminal_reports_focus=0
 
+set guifont=FiraCode-Regular:h15
+
 autocmd! bufwritepost .vimrc source %
 
 " Auto close netrw when hidden
