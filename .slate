@@ -6,14 +6,15 @@ config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
+# Aliases
 alias hyper ctrl;shift;alt;cmd
 
-# Abstract positions
-alias full          move screenOriginX;screenOriginY                 screenSizeX;screenSizeY
-alias lefthalf      move screenOriginX;screenOriginY                 screenSizeX/2;screenSizeY
-alias righthalf     move screenOriginX+screenSizeX/2;screenOriginY   screenSizeX/2;screenSizeY
-alias rightmost     move screenOriginX+screenSizeX*0.4;screenOriginY screenSizeX*0.6;screenSizeY
-alias leftmost      move screenOriginX;screenOriginY                 screenSizeX*0.6;screenSizeY
+alias full      move screenOriginX;screenOriginY                 screenSizeX;screenSizeY
+alias lefthalf  move screenOriginX;screenOriginY                 screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY   screenSizeX/2;screenSizeY
+alias leftmost  move screenOriginX;screenOriginY                 screenSizeX*0.7;screenSizeY
+alias rightmost move screenOriginX+screenSizeX*0.3;screenOriginY screenSizeX*0.7;screenSizeY
+alias center    move screenOriginX+(screenSizeX/2)-(windowSizeX/2);screenOriginY+(screenSizeY/2)-(windowSizeY/2) windowSizeX;windowSizeY
 
 # Positions
 bind f:${hyper} ${full}
@@ -21,6 +22,7 @@ bind h:${hyper} ${lefthalf}
 bind l:${hyper} ${righthalf}
 bind g:${hyper} ${leftmost}
 bind ;:${hyper} ${rightmost}
+bind j:${hyper} ${center}
 
 # App focus
 bind b:${hyper} focus 'Firefox'
