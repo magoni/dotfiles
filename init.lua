@@ -26,11 +26,12 @@ positions = {
 
 -- 2. Map keys to positions
 keysToPositions = {
-  {key="g", units={positions.left70}},
-  {key="h", units={positions.left50, positions.left70, positions.left30}},
-  {key="j", units={positions.centered, positions.maximized}},
-  {key="l", units={positions.right50, positions.right70, positions.right30}},
-  {key=";", units={positions.right70}},
+  {key="g", unit=positions.left70},
+  {key="h", unit=positions.left50},
+  {key="j", unit=positions.centered},
+  {key="f", unit=positions.maximized},
+  {key="l", unit=positions.right50},
+  {key=";", unit=positions.right70},
 }
 
 -- 3. Bind mappings
@@ -41,21 +42,7 @@ end
 
 hs.fnutils.each(keysToPositions, function(entry)
   bindKey(entry.key, function()
-    local units = entry.units
-    local screen = hs.screen.mainScreen()
-    local window = hs.window.focusedWindow()
-    local windowGeo = window:frame()
-
-    local index = 0
-    hs.fnutils.find(units, function(unit)
-      index = index + 1
-
-      local geo = hs.geometry.new(unit):fromUnitRect(screen:frame()):floor()
-      return windowGeo:equals(geo)
-    end)
-    if index == #units then index = 0 end
-
-    window:moveToUnit(units[index + 1])
+    hs.window.focusedWindow():moveToUnit(entry.unit)
   end)
 end)
 
@@ -63,7 +50,7 @@ end)
 -- Hyper i to show window hints
 ------------------------------------
 
-hs.hotkey.bind(hyper, "i", function()
+bindKey("i", function()
     hs.hints.windowHints()
 end)
 
@@ -71,19 +58,19 @@ end)
 -- Hyper wasd to switch window focus
 ------------------------------------
 
-hs.hotkey.bind(hyper, "w", function()
+bindKey("w", function()
     hs.window.focusedWindow():focusWindowNorth()
 end)
 
-hs.hotkey.bind(hyper, "s", function()
+bindKey("s", function()
     hs.window.focusedWindow():focusWindowSouth()
 end)
 
-hs.hotkey.bind(hyper, "d", function()
+bindKey("d", function()
     hs.window.focusedWindow():focusWindowEast()
 end)
 
-hs.hotkey.bind(hyper, "a", function()
+bindKey("a", function()
     hs.window.focusedWindow():focusWindowWest()
 end)
 
