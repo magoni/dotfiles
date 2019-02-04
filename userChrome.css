@@ -27,7 +27,7 @@
 
 
 /* EM - Hide downloads button when no new downloads */
-#downloads-button:not([attention="success"]):not([open="true"]) {
+#downloads-button:not([attention="success"]):not([open="true"]):not([progress="true"]) {
     display: none;
 }
 
