@@ -1,0 +1,17 @@
+[
+  {
+    "subText" : "SELECT * FROM jenga.assetsNew where savedByUser = (select id from jenga.users where email = 'esther.dsouza@autodesk.com') order by dateUpdated desc;",
+    "text" : "Get Draftr user's recently saved assets",
+    "uuid" : "0001"
+  },
+  {
+    "subText" : "mysql -uroot -p -P 8889 -S \/Applications\/MAMP\/tmp\/mysql\/mysql.sock jenga < ~\/Desktop\/draftr-dev.sql",
+    "text" : "Restore database to MAMP mysql",
+    "uuid" : "Bbbb"
+  },
+  {
+    "subText" : "\/Applications\/MAMP\/Library\/bin\/mysqldump --host=localhost -uwebpub -p jenga > ~\/Desktop\/draftr-local.sql",
+    "text" : "Backup MAMP mysql",
+    "uuid" : "III3"
+  }
+]
