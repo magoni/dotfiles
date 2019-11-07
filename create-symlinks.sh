@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-files=(".vimrc" ".vim" ".tmux.conf" ".config/fish" ".config/base16-shell")
+files=(".vimrc" ".vim" ".tmux.conf" ".config/fish" ".config/base16-shell" ".hammerspoon" ".config/karabiner")
 
 repo=`pwd`
 dest="$HOME"
