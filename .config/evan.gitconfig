@@ -1,0 +1,32 @@
+[alias]
+	# https://github.com/GitAlias/gitalias
+	# one letter for most frequent
+	a = add
+	b = branch
+	c = commit
+	d = diff
+	f = fetch
+	s = status
+	l = log
+	m = merge
+	o = checkout
+	p = pull
+	r = remote
+	s = status
+	w = whatchanged
+
+	# others
+	pr = pull --rebase
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	co = checkout
+	cm = commit -m
+	cob = checkout -b
+	cp = cherry-pick
+	amend = !git add -A && git commit --amend --no-edit
+	uncommit = reset --soft HEAD~1
+	ap = add --patch
+	ci = commit --interactive
+
+	# status with short format instead of full details
+	ss = status --short
+	aliases = "!git config --get-regexp '^alias\\.' | cut -c 7- | sed 's/ / = /'"
