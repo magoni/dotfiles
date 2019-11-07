@@ -1,17 +1,42 @@
 [
   {
-    "subText" : "SELECT * FROM jenga.assetsNew where savedByUser = (select id from jenga.users where email = 'esther.dsouza@autodesk.com') order by dateUpdated desc;",
-    "text" : "Get Draftr user's recently saved assets",
-    "uuid" : "0001"
+    "subText" : "SELECT * FROM jenga.assetsNew where savedByUser = (select id from jenga.users where email = 'NAME@autodesk.com') order by dateUpdated desc;",
+    "text" : "Get Draftr user's recently saved assets"
   },
   {
     "subText" : "mysql -uroot -p -P 8889 -S \/Applications\/MAMP\/tmp\/mysql\/mysql.sock jenga < ~\/Desktop\/draftr-dev.sql",
-    "text" : "Restore database to MAMP mysql",
-    "uuid" : "Bbbb"
+    "text" : "Restore database to MAMP mysql"
   },
   {
     "subText" : "\/Applications\/MAMP\/Library\/bin\/mysqldump --host=localhost -uwebpub -p jenga > ~\/Desktop\/draftr-local.sql",
-    "text" : "Backup MAMP mysql",
-    "uuid" : "III3"
+    "text" : "Backup MAMP mysql"
+  },
+  {
+    "subText" : "SELECT * FROM jenga.assetsNew order by id desc;",
+    "text" : "Draftr assets by latest created"
+  },
+  {
+    "subText" : "mysqldump -uwebpub -p jenga projects > ~/draftr-projects.sql",
+    "text" : "Backup mysql table PROD"
+  },
+  {
+    "subText" : "error_log(print_r($VARIABLE, true), 3, 'debug.txt');",
+    "text" : "PHP debug write var to file"
+  },
+  {
+    "subText" : "CURLOPT_RETURNTRANSFER => true,\nCURLOPT_VERBOSE => 1,\nCURLOPT_STDERR => fopen('curl.txt', 'w+')",
+    "text" : "PHP debug cURL"
+  },
+  {
+    "subText" : "# get old user id\nselect * from jenga.users where email like \"%[OLDNAME]%\"; # 1974\n\n# get new user id\nselect * from jenga.users where email like \"%[NEWNAME]%\"; # 2142\n\n# find and update projects\nSELECT * FROM jenga.sharedProjects where userId = 1974;\nSELECT * FROM jenga.projects where ownerId = 1974;\nSELECT * FROM jenga.projectsArchive where ownerId = 1974;",
+    "text" : "Draftr DB migrate account"
+  },
+  {
+    "subText" : "UPDATE jenga.projects SET ownerId = (select id from jenga.users where email='NAME@autodesk.com') WHERE id=3625;",
+    "text" : "Transfer project ownership"
+  },
+  {
+    "subText" : "SELECT * FROM jenga.projects where ownerId = (select id from jenga.users where email = 'NAME@autodesk.com');",
+    "text" : "Get user's proejcts"
   }
 ]

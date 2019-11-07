@@ -100,15 +100,15 @@ end)
 ---------------------------------------
 hs.fnutils.each({
   { key = "b", app = "Firefox" },
-  { key = "v", app = "MacVim" },
+  { key = "v", app = "Sourcetree" },
+  { key = "e", app = "Sublime Text" },
   { key = "c", app = "Code" },
   { key = "o", app = "Microsoft Outlook" },
-  { key = "t", app = "iTerm2" },
+  { key = "t", app = "Terminal" },
   { key = "s", app = "Slack" },
   { key = "d", app = "Spotify" },
   { key = "i", app = "iTunes" },
-  { key = "n", app = "Notion" },
-  { key = "x", app = "SourceTree" },
+  { key = "m", app = "MySQL Workbench" },
 }, function(object)
   bindKey(object.key, function()
     local app = hs.appfinder.appFromName(object.app)
@@ -119,32 +119,32 @@ end)
 ------------------------------------
 ---- Snippet chooser based on https://aldur.github.io/articles/hammerspoon-emojis/
 ------------------------------------
-local choices = hs.json.decode(io.open("snippets.json", "r"):read("*all"))
+-- local choices = hs.json.decode(io.open("snippets.json", "r"):read("*all"))
 
--- Focus the last used window.
-local function focusLastFocused()
-    local wf = hs.window.filter
-    local lastFocused = wf.defaultCurrentSpace:getWindows(wf.sortByFocusedLast)
-    if #lastFocused > 0 then lastFocused[1]:focus() end
-end
+-- -- Focus the last used window.
+-- local function focusLastFocused()
+--     local wf = hs.window.filter
+--     local lastFocused = wf.defaultCurrentSpace:getWindows(wf.sortByFocusedLast)
+--     if #lastFocused > 0 then lastFocused[1]:focus() end
+-- end
 
--- Create the chooser.
--- On selection, copy the emoji and type it into the focused application.
-local chooser = hs.chooser.new(function(choice)
-    -- if not choice then focusLastFocused(); return end
-    if not choice then return end
-    hs.pasteboard.setContents(choice["subText"])
-    -- focusLastFocused()
-    local string = choice["subText"]
-    hs.eventtap.keyStroke({"cmd"}, "v")
-end)
+-- -- Create the chooser.
+-- -- On selection, copy the emoji and type it into the focused application.
+-- local chooser = hs.chooser.new(function(choice)
+--     -- if not choice then focusLastFocused(); return end
+--     if not choice then return end
+--     hs.pasteboard.setContents(choice["subText"])
+--     -- focusLastFocused()
+--     local string = choice["subText"]
+--     hs.eventtap.keyStroke({"cmd"}, "v")
+-- end)
 
-chooser:searchSubText(true)
-chooser:choices(choices)
+-- chooser:searchSubText(true)
+-- chooser:choices(choices)
 
-bindKey("p", function()
-  chooser:show()
-end)
+-- bindKey("p", function()
+--   chooser:show()
+-- end)
 
 --
 
