@@ -29,11 +29,11 @@ https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
 `;` - repeat last search (e.g. with `t` or `f`), `,` reverse
 `s//c` - confirm each replacement
 `C-a, C-x` - add/subtract, jump to digit
+`gi` - puts you into insert mode at the last place you left insert mode
 
 ## Text objects
 `i[w|t|"|p]` - inner word, tag, ", paragraph
 `as` - a sentence
-`C-p` - simple autocomplete
 `:-16,-14co.` - line -16,-14 copy to here
 
 ## Macros
