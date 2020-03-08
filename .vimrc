@@ -13,7 +13,7 @@ autocmd! bufwritepost .vimrc source %
 autocmd FileType netrw setl bufhidden=wipe
 
 " Shortcuts
-let mapleader = ","
+let mapleader = "\\"
 set wildcharm=<C-z>
 nmap <leader>w :w!<cr>
 " command W w !sudo tee % > /dev/null " breaking autosourcing of vimrc somehow
