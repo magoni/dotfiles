@@ -104,11 +104,12 @@ hs.fnutils.each({
   { key = "e", app = "Sublime Text" },
   { key = "c", app = "Code" },
   { key = "o", app = "Microsoft Outlook" },
-  { key = "t", app = "Terminal" },
+  { key = "t", app = "iTerm2" },
   { key = "s", app = "Slack" },
   { key = "d", app = "Spotify" },
   { key = "i", app = "iTunes" },
   { key = "m", app = "MySQL Workbench" },
+  { key = "y", app = "Things" },
 }, function(object)
   bindKey(object.key, function()
     local app = hs.appfinder.appFromName(object.app)
