@@ -17,3 +17,4 @@ sudo ln -s /usr/local/bin/vim /usr/local/bin/vi
 # project search utility (provides /usr/local/bin/ag)
 brew install the-silver-searcher
 ```
+[nvm wrapper for fish](https://github.com/brigand/fast-nvm-fish)
