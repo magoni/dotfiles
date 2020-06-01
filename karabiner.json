@@ -54,6 +54,10 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control"
+                                        ],
+                                        "optional": [
+                                            "left_command",
+                                            "left_option"
                                         ]
                                     }
                                 },
@@ -70,6 +74,10 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control"
+                                        ],
+                                        "optional": [
+                                            "left_command",
+                                            "left_option"
                                         ]
                                     }
                                 },
@@ -86,6 +94,10 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control"
+                                        ],
+                                        "optional": [
+                                            "left_command",
+                                            "left_option"
                                         ]
                                     }
                                 },
@@ -102,6 +114,10 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control"
+                                        ],
+                                        "optional": [
+                                            "left_command",
+                                            "left_option"
                                         ]
                                     }
                                 },
