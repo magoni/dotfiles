@@ -15,10 +15,10 @@
  * Contributor(s): Madis0
  */
 
-#urlbar, .searchbar-textbox {
+/*#urlbar, .searchbar-textbox {
   border: none !important;
   box-shadow: none !important;
-}
+}*/
 
 /* EM - Hide bookmark star in address bar for pages which have not been bookmarked */
 #star-button:not([starred="true"]) {
@@ -27,7 +27,7 @@
 
 
 /* EM - Hide downloads button when no new downloads */
-#downloads-button:not([attention="success"]):not([open="true"]):not([progress="true"]) {
+#downloads-button:not([attention="success"]):not([open="true"]) {
     display: none;
 }
 
@@ -80,14 +80,14 @@ toolbarbutton.webextension-browser-action {
 }
 
 /* EM - Hide selected tab top border */
-#tabbrowser-tabs {
+/*#tabbrowser-tabs {
     --tab-line-color: transparent !important;
-}
+}*/
 
 /* EM - Align tab labels vertical center (off due to above removal of line) */
-.tab-label {
+/*.tab-label {
   margin-top: 0 !important;
-}
+}*/
 
 /* EM - Hide page action separator (between reader view and bookmark star in address bar) */
 #pageActionSeparator {
@@ -95,18 +95,19 @@ toolbarbutton.webextension-browser-action {
 }
 
 /* EM - Remove space on right side of new tab button */
+/* CHANGES 2020-01-21 */
 .titlebar-placeholder[type="post-tabs"] {
 	width: 0 !important;
 }
 
-.tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
+/*.tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
   display: none !important;
 }
 
 .tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
   display: -moz-box !important;
 }
-
+*/
 /*
  * Removes the "PageAction Button", the 3-dot button near the right of the
  * urlbar which gives you options such as: "Bookmark this page", "Save page to
@@ -118,3 +119,7 @@ toolbarbutton.webextension-browser-action {
 #pageActionButton {
   display: none !important;
 }
+
+/*#alltabs-button {
+  display: none !important;
+}*/
