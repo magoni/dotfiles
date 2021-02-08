@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+brew install fish
+brew install node
+brew install jq
+brew install wget
+
 brew tap homebrew/cask-fonts
 brew install font-hack
 
