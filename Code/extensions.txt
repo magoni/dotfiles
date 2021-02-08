@@ -1,8 +1,15 @@
-Babel JavaScript
-Beautify
-Debugger for Chrome
-Document This
+Atom One Dark Theme
+Auto Close Tag
+EditorConfig for VS Code
 ESLint
+Git Graph
 GitLens
-Theme - Oceanic Next
+Import Cost
+Open in GitHub
+Prettier
+ES7 React snippets?
+Text Pastry
+TODO Highlight
+Version Lens
 Vim
+Visual Studio IntelliCode

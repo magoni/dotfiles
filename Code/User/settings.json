@@ -1,26 +1,105 @@
 {
-    "editor.fontSize": 15,
-    "editor.lineHeight": 21,
-    "editor.fontFamily": "Fira Code",
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.minimap.enabled": false,
-    "editor.lineNumbers": "relative",
-    "workbench.colorTheme": "Oceanic Next (dimmed bg)",
-    "editor.smoothScrolling": true,
-    "editor.fontLigatures": true,
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#333333",
-        "statusBar.foreground": "#dddddd"
-    },
-    "git.confirmSync": false,
-    "git.autofetch": true,
-    "diffEditor.renderSideBySide": false,
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "~/Library": true
-    },
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Hack",
+  "editor.multiCursorModifier": "alt",
+  "editor.minimap.enabled": false,
+  "editor.fontLigatures": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "~/Library/Caches/Cleanup At Startup/Transmit": true
+  },
+  "gitlens.advanced.messages": {
+    "suppressFileNotUnderSourceControlWarning": true,
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.statusBar.reduceFlicker": true,
+  "gitlens.codeLens.enabled": false,
+  "todohighlight.isEnable": true,
+  "todohighlight.keywordsPattern": "TODO|TOTEST",
+  "gitlens.blame.heatmap.enabled": false,
+  "gitlens.blame.avatars": false,
+  "gitlens.hovers.enabled": false,
+  "vim.gdefault": true,
+  "workbench.colorCustomizations": {
+    "editorIndentGuide.activeBackground": "#888"
+    // "statusBar.foreground": "#999",
+    // "statusBar.background": "#1B2B34"
+    // "editorIndentGuide.background": "#333",
+    // "editor.lineHighlightBackground": "#363b46"
+  },
+  "window.zoomLevel": 0,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontSize": 13,
+  "telemetry.enableTelemetry": false,
+  "terminal.integrated.shellArgs.osx": [],
+  "php.validate.executablePath": "/usr/bin/php",
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "search.smartCase": true,
+  "files.trimTrailingWhitespace": true,
+  "workbench.activityBar.visible": true,
+  "breadcrumbs.enabled": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript-react]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vim.leader": "\\",
+  "editor.fontWeight": "300",
+  "editor.renderControlCharacters": true,
+  "workbench.enableExperiments": false,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "telemetry.enableCrashReporter": false,
+  "terminal.integrated.fontWeightBold": "normal",
+  "phpcs.executablePath": "/Users/magonie/.composer/vendor/squizlabs/php_codesniffer/bin/phpcs",
+  "phpcs.enable": false,
+  "phpcs.warningSeverity": 8,
+  "editor.renderWhitespace": "all",
+  "git.scanRepositories": ["/Users/magonie/git/"],
+  "editor.minimap.showSlider": "always",
+  "search.exclude": {
+    "~/Library/**": true
+  },
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "git.suggestSmartCommit": false,
+  "editor.lineNumbers": "relative",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "search.quickOpen.includeHistory": false,
+  "VSCodeCounter.showInStatusBar": true,
+  "diffEditor.renderSideBySide": false,
+  "editor.formatOnSave": true,
+  "html.format.preserveNewLines": false,
+  "html.format.enable": false,
+  "workbench.colorTheme": "Atom One Dark",
+  "gitlens.views.repositories.location": "gitlens",
+  "gitlens.views.fileHistory.location": "gitlens",
+  "gitlens.views.lineHistory.location": "gitlens",
+  "gitlens.views.compare.location": "gitlens",
+  "gitlens.views.search.location": "gitlens",
+  "editor.renameOnType": true,
+  "gitlens.views.search.files.layout": "list",
+  "gitlens.hovers.changesDiff": "hunk",
+  "files.associations": {
+    "*.jsx": "javascript"
+  }
 }
