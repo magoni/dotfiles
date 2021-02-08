@@ -1,4 +1,5 @@
 local hyper = {"shift", "cmd", "alt", "ctrl"}
+-- local hyper = {"shift", "alt", "ctrl"}
 hs.window.animationDuration = 0;
 
 -- TODO
@@ -11,28 +12,29 @@ hs.window.animationDuration = 0;
 ---------------------------------------
 
 -- 1. Define positions
-positions = {
-  maximized = hs.layout.maximized,
-  centered = {x=0.15, y=0.15, w=0.7, h=0.7},
+-- positions = {
+--   maximized = hs.layout.maximized,
+--   centered = {x=0.15, y=0.15, w=0.7, h=0.7},
 
-  left30 = {x=0, y=0, w=0.30, h=1},
-  left50 = hs.layout.left50,
-  left70 = {x=0, y=0, w=0.70, h=1},
+--   left30 = {x=0, y=0, w=0.30, h=1},
+--   left50 = hs.layout.left50,
+--   left70 = {x=0, y=0, w=0.70, h=1},
 
-  right30 = {x=0.70, y=0, w=0.30, h=1},
-  right50 = hs.layout.right50,
-  right70 = {x=0.30, y=0, w=0.70, h=1},
-}
+--   right30 = {x=0.70, y=0, w=0.30, h=1},
+--   right50 = hs.layout.right50,
+--   right70 = {x=0.30, y=0, w=0.70, h=1},
+-- }
 
 -- 2. Map keys to positions
-keysToPositions = {
-  {key="g", unit=positions.left70},
-  {key="h", unit=positions.left50},
-  {key="j", unit=positions.centered},
-  {key="f", unit=positions.maximized},
-  {key="l", unit=positions.right50},
-  {key=";", unit=positions.right70},
-}
+-- Kinda influenced by HHKB arrow cluster and browser []
+-- keysToPositions = {
+--   {key="[", unit=positions.left70},
+--   {key="]", unit=positions.right70},
+--   {key=";", unit=positions.left50},
+--   {key="'", unit=positions.right50},
+--   {key="g", unit=positions.centered},
+--   {key="f", unit=positions.maximized},
+-- }
 
 -- 3. Bind mappings
 -- https://aaronlasseigne.com/2016/02/16/switching-from-slate-to-hammerspoon/
@@ -40,39 +42,39 @@ function bindKey(key, fn)
   hs.hotkey.bind(hyper, key, fn)
 end
 
-hs.fnutils.each(keysToPositions, function(entry)
-  bindKey(entry.key, function()
-    hs.window.focusedWindow():moveToUnit(entry.unit)
-  end)
-end)
+-- hs.fnutils.each(keysToPositions, function(entry)
+--   bindKey(entry.key, function()
+--     hs.window.focusedWindow():moveToUnit(entry.unit)
+--   end)
+-- end)
 
 ------------------------------------
 -- Hyper i to show window hints
 ------------------------------------
 
-bindKey("i", function()
-    hs.hints.windowHints()
-end)
+-- bindKey("i", function()
+--     hs.hints.windowHints()
+-- end)
 
 ------------------------------------
 -- Move windows between screens
 ------------------------------------
 
-bindKey("left", function()
-  hs.window.focusedWindow():moveOneScreenWest()
-end)
+-- bindKey("left", function()
+--   hs.window.focusedWindow():moveOneScreenWest()
+-- end)
 
-bindKey("right", function()
-  hs.window.focusedWindow():moveOneScreenEast()
-end)
+-- bindKey("right", function()
+--   hs.window.focusedWindow():moveOneScreenEast()
+-- end)
 
-bindKey("down", function()
-  hs.window.focusedWindow():moveOneScreenSouth()
-end)
+-- bindKey("down", function()
+--   hs.window.focusedWindow():moveOneScreenSouth()
+-- end)
 
-bindKey("up", function()
-  hs.window.focusedWindow():moveOneScreenNorth()
-end)
+-- bindKey("up", function()
+--   hs.window.focusedWindow():moveOneScreenNorth()
+-- end)
 
 ------------------------------------
 -- Hyper wasd to switch window focus
@@ -100,8 +102,6 @@ end)
 ---------------------------------------
 hs.fnutils.each({
   { key = "b", app = "Firefox" },
-  { key = "v", app = "Sourcetree" },
-  { key = "e", app = "Sublime Text" },
   { key = "c", app = "Code" },
   { key = "o", app = "Microsoft Outlook" },
   { key = "t", app = "iTerm2" },
