@@ -28,7 +28,3 @@ sudo ln -s /usr/local/bin/vim /usr/local/bin/vi
 ```
 
 6. [nvm wrapper for fish](https://github.com/brigand/fast-nvm-fish)
-
-## Notes
-
-Maybe try this thing https://github.com/jorgebucaran/hydro
