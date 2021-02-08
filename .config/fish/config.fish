@@ -2,5 +2,5 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 # Base16 Shell
 if status --is-interactive
-	eval sh $HOME/.config/base16-shell/scripts/base16-google-dark.sh
+    eval sh $HOME/.config/base16-shell/scripts/base16-onedark.sh
 end
