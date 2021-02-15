@@ -103,49 +103,53 @@ end
 hs.fnutils.each({
   { key = "b", app = "Firefox" },
   { key = "c", app = "Code" },
-  { key = "o", app = "Microsoft Outlook" },
   { key = "t", app = "iTerm2" },
   { key = "s", app = "Slack" },
+  { key = "c", app = "Visual Studio Code" },
   { key = "d", app = "Spotify" },
-  { key = "i", app = "iTunes" },
-  { key = "m", app = "MySQL Workbench" },
-  { key = "y", app = "Things" },
+  { key = "i", app = "Music" },
+  { key = "a", app = "Ableton Live 10 Suite" },
+  { key = "y", app = "Things3" },
+  -- { key = "e", app = "Sublime Text" },
+  -- { key = "t", app = "iTerm" },
+  -- { key = "s", app = "Slack" },
 }, function(object)
   bindKey(object.key, function()
-    local app = hs.appfinder.appFromName(object.app)
-    if app then app:activate() end
+    -- local app = hs.appfinder.appFromName(object.app)
+    -- if app then app:activate() end
+    hs.application.launchOrFocus(object.app)
   end)
 end)
 
 ------------------------------------
 ---- Snippet chooser based on https://aldur.github.io/articles/hammerspoon-emojis/
 ------------------------------------
-local choices = hs.json.decode(io.open("snippets.json", "r"):read("*all"))
-
--- Focus the last used window.
-local function focusLastFocused()
-    local wf = hs.window.filter
-    local lastFocused = wf.defaultCurrentSpace:getWindows(wf.sortByFocusedLast)
-    if #lastFocused > 0 then lastFocused[1]:focus() end
-end
-
--- Create the chooser.
--- On selection, copy the emoji and type it into the focused application.
-local chooser = hs.chooser.new(function(choice)
-    -- if not choice then focusLastFocused(); return end
-    if not choice then return end
-    hs.pasteboard.setContents(choice["subText"])
-    -- focusLastFocused()
-    local string = choice["subText"]
-    hs.eventtap.keyStroke({"cmd"}, "v")
-end)
-
-chooser:searchSubText(true)
-chooser:choices(choices)
-
-bindKey("p", function()
-  chooser:show()
-end)
+-- local choices = hs.json.decode(io.open("snippets.json", "r"):read("*all"))
+--
+-- -- Focus the last used window.
+-- local function focusLastFocused()
+--     local wf = hs.window.filter
+--     local lastFocused = wf.defaultCurrentSpace:getWindows(wf.sortByFocusedLast)
+--     if #lastFocused > 0 then lastFocused[1]:focus() end
+-- end
+--
+-- -- Create the chooser.
+-- -- On selection, copy the emoji and type it into the focused application.
+-- local chooser = hs.chooser.new(function(choice)
+--     -- if not choice then focusLastFocused(); return end
+--     if not choice then return end
+--     hs.pasteboard.setContents(choice["subText"])
+--     -- focusLastFocused()
+--     local string = choice["subText"]
+--     hs.eventtap.keyStroke({"cmd"}, "v")
+-- end)
+--
+-- chooser:searchSubText(true)
+-- chooser:choices(choices)
+--
+-- bindKey("p", function()
+--   chooser:show()
+-- end)
 
 ------------------------------------
 ---- Reload config on write
