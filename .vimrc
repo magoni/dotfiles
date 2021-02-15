@@ -55,7 +55,8 @@ augroup END
 
 " Colors
 let base16colorspace=256
-colorscheme base16-google-dark
+" base16-google-dark
+colorscheme base16-eighties
 set cursorline
 let g:javascript_plugin_jsdoc = 1
 let g:jsx_ext_required = 0
