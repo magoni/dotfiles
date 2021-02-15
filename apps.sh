@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 brew install fish
-brew install node
 brew install jq
 brew install wget
 
