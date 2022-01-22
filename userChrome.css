@@ -1,34 +1,9 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 
-/* Hide horizontal tab toolbar */
-/* If minimize, maximize, and close buttons overlap other controls, add the Flexible Space in Firefox Customize. */
-/*#TabsToolbar {
-    visibility:collapse!important;
-}
-*/
-
-/*
- * Makes the address bar and search bar borderless.
- * Use the default white theme for an Edge-like look or in VivaldiFox with page colors applied
- * on toolbar fields for a seamless one-color look.
- *
- * Contributor(s): Madis0
- */
-
-/*#urlbar, .searchbar-textbox {
-  border: none !important;
+/* EM - selected tab: hide shadow */
+#tabbrowser-tabs:not([noshadowfortests])
+  .tab-background:is([selected], [multiselected]) {
   box-shadow: none !important;
-}*/
-
-/* EM - Hide bookmark star in address bar for pages which have not been bookmarked */
-#star-button:not([starred="true"]) {
-    display: none !important;
-}
-
-
-/* EM - Hide downloads button when no new downloads */
-#downloads-button:not([attention="success"]):not([open="true"]) {
-    display: none;
 }
 
 /*
@@ -53,73 +28,37 @@
 
 /* EM - Set extension toolbar icons to greyscale */
 toolbarbutton.webextension-browser-action {
-	filter: grayscale(50%) !important;
-	opacity: 0.9 !important;
+  filter: grayscale(50%) !important;
+  opacity: 0.9 !important;
 }
 
-/*
- * Bookmarks toolbar is visible only on new tab page, just like Chrome.
- *
- * Screenshot: https://vimeo.com/235059188
- * Video: https://vimeo.com/240436456
- *
- * Contributor(s): https://www.reddit.com/user/AJtfM7zT4tJdaZsm and Andrei Cristian Petcu
- *                 https://www.reddit.com/r/FirefoxCSS/comments/7evwow/show_bookmarks_toolbar_only_on_new_tab/
- */
+/**********************/
 
-#main-window #PersonalToolbar {
-  visibility: collapse !important;
+/* Make all tabs small except selected one */
+/* .tabbrowser-tab[fadein]:not([selected]):not([pinned]) {
+  max-width: 145px !important;
+  min-width: 115px !important;
+} */
+
+/* Selected tabs width */
+.tabbrowser-tab[selected][fadein]:not([pinned]) {
+  /*max-width: 225px !important;*/
+  min-width: 205px !important;
 }
 
-#main-window[title^="about:newtab"] #PersonalToolbar,
-#main-window[title^="New Tab"] #PersonalToolbar,
-#main-window[title^="Nightly"] #PersonalToolbar,
-#main-window[title^="Mozilla Firefox"] #PersonalToolbar,
-#main-window[title^="Firefox"] #PersonalToolbar {
-  visibility: visible !important;
-}
-
-/* EM - Hide selected tab top border */
-/*#tabbrowser-tabs {
-    --tab-line-color: transparent !important;
-}*/
-
-/* EM - Align tab labels vertical center (off due to above removal of line) */
-/*.tab-label {
-  margin-top: 0 !important;
-}*/
-
-/* EM - Hide page action separator (between reader view and bookmark star in address bar) */
-#pageActionSeparator {
-	display: none !important;
-}
-
-/* EM - Remove space on right side of new tab button */
-/* CHANGES 2020-01-21 */
-.titlebar-placeholder[type="post-tabs"] {
-	width: 0 !important;
-}
-
-/*.tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
+/* Hide tab close button */
+#TabsToolbar .close-icon {
   display: none !important;
 }
 
-.tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
+/* Unhide close button when it is selected tab and not pinned */
+#TabsToolbar .tabbrowser-tab[selected="true"]:not([pinned]) .close-icon {
   display: -moz-box !important;
 }
-*/
-/*
- * Removes the "PageAction Button", the 3-dot button near the right of the
- * urlbar which gives you options such as: "Bookmark this page", "Save page to
- * pocket", etc.
- *
- * Contributor(s): DrPugsley, Madis0
- */
 
-#pageActionButton {
-  display: none !important;
+/* Show close button even when mouse hover on inactive tabs */
+#TabsToolbar
+  .tabbrowser-tab:not([selected="true"]):not([pinned]):hover
+  .close-icon {
+  display: -moz-box !important;
 }
-
-/*#alltabs-button {
-  display: none !important;
-}*/
